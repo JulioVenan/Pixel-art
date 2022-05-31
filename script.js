@@ -25,6 +25,7 @@ createBorder()
 
 const coloredNodes = document.querySelectorAll(".color")
 let selectedColor = 'black';
+let selectedColor2 = 'white';
 
 function getRandomColor() {
   const letters = '0123456789ABCDEF';
@@ -39,8 +40,10 @@ function addColorsToNodesAndSelectBlackOne() {
   const blackNode = coloredNodes[0];
   blackNode.style.backgroundColor = selectedColor;
   blackNode.classList.add('selected')
+  const whiteNode = coloredNodes[1]
+  whiteNode.style.backgroundColor = selectedColor2
 
-  for (let i = 1; i < coloredNodes.length; i += 1) {
+  for (let i = 2; i < coloredNodes.length; i += 1) {
     const currentNode = coloredNodes[i]
     currentNode.style.backgroundColor = getRandomColor()
   }
